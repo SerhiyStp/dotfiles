@@ -1,93 +1,32 @@
-local opt = vim.opt
+-- Make line numbers default
+vim.wo.number = true
 
--- Session Management
-opt.sessionoptions="blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
+vim.g.python_host_prog = '/usr/bin/python3'
+vim.g.python3_host_prog = '/usr/bin/python3'
 
--- Line Numbers
-opt.relativenumber = true
-opt.number = true
+vim.opt.nu = true
 
--- Tabs & Indentation
-opt.tabstop = 4
-opt.shiftwidth = 4
-opt.expandtab = true
-opt.autoindent = true
-vim.bo.softtabstop = 4
-
--- Line Wrapping
-opt.wrap = false
-opt.textwidth = 0
-opt.wrapmargin = 0
-
--- Search Settings
-opt.ignorecase = true
-opt.smartcase = true
-
--- Cursor Line
-opt.cursorline = true
-
--- Appearance
-opt.termguicolors = true
-opt.background = "dark"
-opt.signcolumn = "yes"
-
--- Backspace
-opt.backspace = "indent,eol,start"
-
--- Clipboard
--- opt.clipboard:append("unnamedplus")
-opt.clipboard = "unnamedplus"
-
--- Split Windows
-opt.splitright = true
-opt.splitbelow = true
-
--- Consider - as part of keyword
-opt.iskeyword:append("-")
-
--- Disable the mouse while in nvim
---opt.mouse = ""
-
--- Folding
-opt.foldlevel = 20
-opt.foldmethod = "expr"
-opt.foldexpr = "nvim_treesitter#foldexpr()" -- Utilize Treesitter folds
-
-vim.cmd([[ 	
-    if exists(':GuiFont')
-        -- GuiFont! Source Code Pro
-        GuiFont! JetBrains Mono
-    endif
-]])
-
-if vim.g.neovide then
-    -- vim.o.guifont = "Source Code Pro:h12"
-    vim.o.guifont = "JetBrains Mono:h12"
-end
-
---opt.guifont = { "Source Code Pro", "h10" }
---opt.guifont = { "Hack NFM", "h12" }
-
-opt.swapfile = false
-opt.backup = false
-
-vim.o.autoread = true
--- vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "CursorHoldI", "FocusGained" }, {
-    -- command = "if mode() != 'c' | checktime | endif",
-    -- pattern = { "*" },
--- })
-
-opt.virtualedit = "block"
-
--- This has to be set before initializing lazy
-vim.g.mapleader = ","
-
--- Better indentation
--- vim.cmd([[
--- 	vnoremap < <gv 
--- 	vnoremap > >gv
--- ]])
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.expandtab = true
+vim.opt.smartindent = true
+vim.opt.wrap = false
+vim.opt.swapfile = false
+vim.opt.backup = false
+vim.opt.undodir = os.getenv("HOME")
+vim.opt.undofile = true
+vim.opt.hlsearch = false
+vim.opt.incsearch = true
+vim.opt.termguicolors = true
+vim.opt.scrolloff = 8
+--vim.opt.signcolumn = "yes"
+vim.opt.isfname:append("@-@")
+vim.opt.updatetime = 50
+--vim.opt.colorcolumn = "80"
 --
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+--vim.opt.foldenable = false   -- do not auto-fold on open
+vim.opt.foldlevel = 99       -- open everything by default
 
-opt.diffopt:append("algorithm:patience")
-opt.diffopt:append("indent-heuristic")
