@@ -1,8 +1,8 @@
 -- Make line numbers default
 vim.wo.number = true
 
-vim.g.python_host_prog = '/usr/bin/python3'
-vim.g.python3_host_prog = '/usr/bin/python3'
+-- vim.g.python_host_prog = '/usr/bin/python3'
+-- vim.g.python3_host_prog = '/usr/bin/python3'
 
 vim.opt.nu = true
 
@@ -29,4 +29,8 @@ vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 --vim.opt.foldenable = false   -- do not auto-fold on open
 vim.opt.foldlevel = 99       -- open everything by default
+
+if vim.g.neovide then
+    vim.o.guifont = "JetBrainsMono Nerd Font:h11"
+end
 

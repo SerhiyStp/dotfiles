@@ -15,7 +15,6 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
     { "nvim-treesitter/nvim-treesitter", config = function() require("plugins.treesitter") end },
     { "nvim-telescope/telescope.nvim", config = function() require("plugins.telescope") end },
-    { "nvim-lualine/lualine.nvim", config = function() require("plugins.lualine") end },
     { "catppuccin/nvim", name = "catppuccin", config = function() require("plugins.catppuccin") end },
 
     -- Bufferline
@@ -114,8 +113,19 @@ require("lazy").setup({
            require("plugins.formatting")
        end,
     },
-
-
+	
+	-- Vimtex
+	{
+		"lervag/vimtex",
+		lazy = false,        -- IMPORTANT: do not lazy-load
+		ft = { "tex", "latex" },
+		init = function()
+			vim.g.vimtex_view_method = "general"
+			vim.g.vimtex_view_general_viewer = "SumatraPDF"
+			vim.g.vimtex_view_general_options =
+			"-reuse-instance -forward-search @tex @line @pdf"
+		end,	
+	},
     -- add more plugins here
 })
 

@@ -1,5 +1,5 @@
 require("nvim-treesitter.config").setup({
-    ensure_installed = { "c", "fortran", "cpp", "python", "lua", "javascript", "markdown" },
+    ensure_installed = { "c", "fortran", "cpp", "python", "lua", "javascript", "markdown", "latex" },
     highlight = { enable = true },
     indent = { enable = true },
 })
