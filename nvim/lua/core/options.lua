@@ -34,3 +34,6 @@ if vim.g.neovide then
     vim.o.guifont = "JetBrainsMono Nerd Font:h11"
 end
 
+--vim.g.python3_host_prog = "C:/Users/serge/AppData/Local/Python/pythoncore-3.14-64/python.exe"
+
+

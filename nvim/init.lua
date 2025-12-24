@@ -2,6 +2,7 @@ require("core.options")
 require("core.keymaps")
 require("core.autocmds")
 
+pcall(require, "core.local")
 -- load Lazy.nvim
 require("plugins")
 
