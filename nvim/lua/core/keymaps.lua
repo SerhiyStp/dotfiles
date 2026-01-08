@@ -19,6 +19,8 @@ vim.keymap.set("n", "za", "za", { desc = "Toggle fold" })
 vim.keymap.set("n", "zR", "zR", { desc = "Open all folds" })
 vim.keymap.set("n", "zM", "zM", { desc = "Close all folds" })
 
+vim.keymap.set("n", "<space>", "za")
+
 --local keymap = vim.keymap 
 --vim.api.nvim_set_keymap('n', '<C-n>', ':NERDTreeToggle <CR>', { noremap = true})
 --vim.api.nvim_set_keymap('n', '<leader>n', ':NERDTreeFind <CR>', { noremap = true})

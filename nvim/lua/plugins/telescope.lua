@@ -43,3 +43,11 @@ map("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", { desc = "Live grep" })
 map("n", "<leader>fb", "<cmd>Telescope buffers<cr>", { desc = "Buffers" })
 map("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", { desc = "Help tags" })
 map("n", "<leader>fo", builtin.oldfiles, { desc = "Search recent files" })
+map("n", "<leader>gf", function()
+    require("telescope.builtin").live_grep({
+        additional_args = { "--type", "fortran" },
+    })
+end)
+map("n", "<leader>fs", function()
+    require("telescope.builtin").grep_string()
+end, { desc = "Grep word under cursor" })

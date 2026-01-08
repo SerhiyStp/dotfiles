@@ -106,26 +106,34 @@ require("lazy").setup({
     },
 
     -- Formatting
-    {
-       "stevearc/conform.nvim",
-       event = "BufWritePre",
-       config = function()
-           require("plugins.formatting")
-       end,
-    },
+    -- {
+    --    "stevearc/conform.nvim",
+    --    event = "BufWritePre",
+    --    config = function()
+    --        require("plugins.formatting")
+    --    end,
+    -- },
 	
 	-- Vimtex
-	{
-		"lervag/vimtex",
-		lazy = false,        -- IMPORTANT: do not lazy-load
-		ft = { "tex", "latex" },
-		init = function()
-			vim.g.vimtex_view_method = "general"
-			vim.g.vimtex_view_general_viewer = "SumatraPDF"
-			vim.g.vimtex_view_general_options =
-			"-reuse-instance -forward-search @tex @line @pdf"
-		end,	
-	},
+    {
+        "lervag/vimtex",
+        lazy = false,        -- IMPORTANT: do not lazy-load
+        config = function()
+            --vim.g.vimtex_view_method = "sumatrapdf"
+            --vim.g.vimtex_view_sumatrapdf_options = "-reuse-instance"
+            vim.g.vimtex_view_method = "general"
+            vim.g.vimtex_view_general_viewer = "SumatraPDF"
+            vim.g.vimtex_view_general_options = "-reuse-instance -forward-search @tex @line @pdf"
+        end,	
+    },
+
+    -- mini.surround
+    {
+        "nvim-mini/mini.surround",
+        config = function()
+            require("plugins.mini_surround")
+        end,
+    }
     -- add more plugins here
 })
 
