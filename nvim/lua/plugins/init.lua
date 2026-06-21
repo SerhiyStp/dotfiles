@@ -15,7 +15,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
     { "nvim-treesitter/nvim-treesitter", config = function() require("plugins.treesitter") end },
     { "nvim-telescope/telescope.nvim", config = function() require("plugins.telescope") end },
-    { "catppuccin/nvim", name = "catppuccin", config = function() require("plugins.catppuccin") end },
+    { "catppuccin/nvim", name = "catppuccin", priority = 1000, config = function() require("plugins.catppuccin") end },
 
     -- Bufferline
     {

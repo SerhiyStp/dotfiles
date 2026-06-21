@@ -1,4 +1,4 @@
- vim.notify("init.lua loaded", vim.log.levels.WARN)
+--vim.notify("init.lua loaded", vim.log.levels.WARN)
 
 require("core.options")
 require("core.keymaps")

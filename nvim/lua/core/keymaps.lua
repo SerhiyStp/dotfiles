@@ -21,6 +21,9 @@ vim.keymap.set("n", "zM", "zM", { desc = "Close all folds" })
 
 vim.keymap.set("n", "<space>", "za")
 
+-- Templates
+vim.keymap.set("n", "<leader>tex", ":-1read $HOME/dotfiles/templates/latex.tex<CR>", { noremap = true, silent = true})
+
 --local keymap = vim.keymap 
 --vim.api.nvim_set_keymap('n', '<C-n>', ':NERDTreeToggle <CR>', { noremap = true})
 --vim.api.nvim_set_keymap('n', '<leader>n', ':NERDTreeFind <CR>', { noremap = true})

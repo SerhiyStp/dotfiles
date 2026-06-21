@@ -30,9 +30,9 @@ vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 --vim.opt.foldenable = false   -- do not auto-fold on open
 vim.opt.foldlevel = 99       -- open everything by default
 
-if vim.g.neovide then
+--if vim.g.neovide then
     vim.o.guifont = "JetBrainsMono Nerd Font:h11"
-end
+--end
 
 --vim.g.python3_host_prog = "C:/Users/serge/AppData/Local/Python/pythoncore-3.14-64/python.exe"
 
